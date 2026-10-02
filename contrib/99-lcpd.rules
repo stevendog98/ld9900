@@ -1,0 +1,6 @@
+# Logic Controls / Bematech line displays: allow non-root access for ldctl.py (pyusb)
+# Install: sudo cp 99-lcpd.rules /etc/udev/rules.d/ && sudo udevadm control --reload && replug
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fa8", ATTR{idProduct}=="a010", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fa8", ATTR{idProduct}=="a030", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fa8", ATTR{idProduct}=="a060", MODE="0660", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fa8", ATTR{idProduct}=="a090", MODE="0660", TAG+="uaccess"

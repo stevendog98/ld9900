@@ -1,0 +1,18 @@
+# systemd unit: run the LD9900 dashboard/API at boot.
+#   pip install ld9900   (or: pip install .  from a clone)
+#   sudo cp contrib/99-lcpd.rules /etc/udev/rules.d/ && sudo udevadm control --reload   # USB access
+#   sudo cp contrib/ld9900-dash.service /etc/systemd/system/
+#   sudo systemctl edit ld9900-dash   # set User= and the token
+#   sudo systemctl enable --now ld9900-dash
+[Unit]
+Description=LD9900 VFD dashboard + API
+After=network-online.target
+
+[Service]
+User=ld9900
+ExecStart=/usr/bin/env ld9900 dash --host 0.0.0.0 --port 8099 --token CHANGE_ME --face --ambient
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+{
+  "idle_after": 120,
+  "face_x": 12,
+  "card_seconds": 8,
+  "scroll_speed": 6,
+  "cards": ["clock", "weather", "news", "facts", "system", "pushed"],
+  "location": {"name": "Phoenix", "lat": 33.45, "lon": -112.07, "units": "fahrenheit"},
+  "weather_refresh": 900,
+  "feeds": [
+    {"name": "NPR", "url": "https://feeds.npr.org/1001/rss.xml", "max": 5}
+  ],
+  "news_refresh": 1200,
+  "facts": [
+    "Arizona doesn't observe daylight saving time (except the Navajo Nation).",
+    "VFDs glow when electrons from a hot filament hit phosphor-coated anodes."
+  ],
+  "facts_file": null,
+  "quiet_hours": {"start": "23:00", "end": "06:00", "brightness": 1}
+}
